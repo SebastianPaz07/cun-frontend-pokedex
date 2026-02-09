@@ -1,0 +1,48 @@
+/* ===== Titulo principal ===== */
+.title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.pokeball-icon {
+  width: 50px;
+  height: 50px;
+}
+
+/* ===== Subtitulo ===== */
+.subtitle {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+/* ===== Boton de recarga ===== */
+.btn-reload {
+  margin-top: 15px;
+  border-radius: 25px;
+  padding: 10px 25px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.btn-reload:hover:not(:disabled) {
+  transform: scale(1.05);
+}
+
+/* ===== Spinner de carga ===== */
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+}
+
+/* ===== Titulo de galeria ===== */
+.gallery-title {
+  color: #555;
+  font-weight: 700;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #eee;
+}
