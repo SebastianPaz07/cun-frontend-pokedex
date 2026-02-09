@@ -1,0 +1,61 @@
+<div class="modal-backdrop" (click)="onClose()">
+  <div class="modal-content" (click)="onContentClick($event)">
+    <button class="btn-close-modal" (click)="onClose()" aria-label="Close"></button>
+
+    <div class="pokemon-image">
+      <img [src]="getImage()" [alt]="getName()">
+    </div>
+
+    <div class="pokemon-info">
+      <span class="pokemon-number">#{{ pokemon.id }}</span>
+      <h2 class="pokemon-name">{{ getName() }}</h2>
+
+      <div class="section">
+        <h6>Tipos</h6>
+        <div class="badges-container">
+          <app-type-badge
+            *ngFor="let t of pokemon.types"
+            [type]="t.type.name">
+          </app-type-badge>
+        </div>
+      </div>
+
+      <div class="section">
+        <h6>Características</h6>
+        <div class="characteristics">
+          <div class="characteristic">
+            <span class="value">{{ getHeight() }}</span>
+            <span class="label">Altura</span>
+          </div>
+          <div class="characteristic">
+            <span class="value">{{ getWeight() }}</span>
+            <span class="label">Peso</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h6>Habilidades</h6>
+        <div class="badges-container">
+          <span *ngFor="let a of pokemon.abilities" class="ability-badge">
+            {{ a.ability.name | titlecase }}
+            <span *ngIf="a.is_hidden" class="hidden-tag">(Oculta)</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="section">
+        <h6>Estadísticas</h6>
+        <div class="stats-container">
+          <div *ngFor="let stat of pokemon.stats" class="stat-item">
+            <span class="stat-name">{{ stat.stat.name | titlecase }}</span>
+            <div class="stat-bar-container">
+              <div class="stat-bar" [style.width.%]="(stat.base_stat / 255) * 100"></div>
+            </div>
+            <span class="stat-value">{{ stat.base_stat }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

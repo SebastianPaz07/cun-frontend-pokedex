@@ -1,0 +1,34 @@
+<div class="featured-container" [style.--primary-color]="getPrimaryColor()">
+  <div class="featured-glow"></div>
+
+  <div class="featured-content">
+    <div class="featured-image-container">
+      <div class="featured-circle"></div>
+      <img [src]="getImage()" [alt]="getName()" class="featured-image">
+    </div>
+
+    <div class="featured-info">
+      <span class="featured-label">Pokémon Destacado</span>
+      <span class="featured-number">#{{ pokemon.id }}</span>
+      <h2 class="featured-name">{{ getName() }}</h2>
+
+      <div class="featured-types">
+        @for (t of pokemon.types; track t.type.name) {
+          <app-type-badge [type]="t.type.name"></app-type-badge>
+        }
+      </div>
+
+      <button class="btn-featured" (click)="onViewDetail()">
+        Ver detalles
+      </button>
+    </div>
+  </div>
+
+  <div class="particles">
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+    <span class="particle"></span>
+  </div>
+</div>
